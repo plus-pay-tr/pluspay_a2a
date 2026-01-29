@@ -14,8 +14,8 @@
 dependencies:
   pluspay_a2a:
     git:
-      url: https://github.com/pluspay/pluspay_a2a.git
-      ref: main # veya belirli bir tag/commit
+      url: https://github.com/plus-pay-tr/pluspay_a2a.git
+      ref: main 
 ```
 
 Ardından çalıştırın:
