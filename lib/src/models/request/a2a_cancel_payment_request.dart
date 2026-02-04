@@ -15,6 +15,8 @@ sealed class PPCancelPaymentRequestModel with _$PPCancelPaymentRequestModel {
       _$PPCancelPaymentRequestModelFromJson(json);
 
   factory PPCancelPaymentRequestModel.toRequest({
+    required String serialNo,
+    required String clientToken,
     required String transactionId,
     required String orderCode,
     String? note,
@@ -22,6 +24,8 @@ sealed class PPCancelPaymentRequestModel with _$PPCancelPaymentRequestModel {
     data: PPCancelPaymentRequestData(transactionId: transactionId, note: note),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_PAYMENT_CANCEL,
+      serialNo: serialNo,
+      clientToken: clientToken,
       orderCode: orderCode,
     ),
   );

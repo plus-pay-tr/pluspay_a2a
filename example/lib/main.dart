@@ -31,6 +31,9 @@ class _HomePageState extends State<HomePage> {
   final PPA2AClient _pluspay = PPA2AClient();
   bool _loading = false;
 
+  final String _clientToken = 'YOUR_CLIENT_TOKEN';
+  final String _serialNo = 'YOUR_SERIAL_NO';
+
   @override
   void initState() {
     super.initState();
@@ -73,6 +76,8 @@ class _HomePageState extends State<HomePage> {
           totalAmount: 2.0,
           paymentType: PPPaymentType.POS,
           paymentMethod: PPPaymentMethod.CC,
+          clientToken: _clientToken,
+          serialNo: _serialNo,
         ),
       ),
     );
@@ -85,6 +90,8 @@ class _HomePageState extends State<HomePage> {
           orderCode: 'ORD001',
           transactionId: 'TX001',
           note: 'Test iptali',
+          clientToken: _clientToken,
+          serialNo: _serialNo,
         ),
       ),
     );
@@ -99,6 +106,8 @@ class _HomePageState extends State<HomePage> {
           paymentMethod: PPPaymentMethod.CC,
           transactionId: Uuid().v4(),
           taxRate: 0,
+          clientToken: _clientToken,
+          serialNo: _serialNo,
         ),
       ),
     );
@@ -110,6 +119,8 @@ class _HomePageState extends State<HomePage> {
         PPEftCancelRequestModel.toRequest(
           transactionId: Uuid().v4(),
           totalAmount: 3.0,
+          clientToken: _clientToken,
+          serialNo: _serialNo,
         ),
       ),
     );
@@ -118,7 +129,11 @@ class _HomePageState extends State<HomePage> {
   Future<void> startOrderPayment() async {
     await _execute(
       () => _pluspay.startOrderPayment(
-        PPOrderPaymentRequestModel.toRequest(orderCode: 'ORD001'),
+        PPOrderPaymentRequestModel.toRequest(
+          orderCode: 'ORD001',
+          clientToken: _clientToken,
+          serialNo: _serialNo,
+        ),
       ),
     );
   }
@@ -187,7 +202,11 @@ class _HomePageState extends State<HomePage> {
                   label: 'Siparis Odeme',
                   onTap: () => _execute(
                     () => _pluspay.startOrderPayment(
-                      PPOrderPaymentRequestModel.toRequest(orderCode: 'ORD001'),
+                      PPOrderPaymentRequestModel.toRequest(
+                        orderCode: 'ORD001',
+                        clientToken: _clientToken,
+                        serialNo: _serialNo,
+                      ),
                     ),
                   ),
                 ),
@@ -201,6 +220,8 @@ class _HomePageState extends State<HomePage> {
                       PPEodRequestModel.toRequest(
                         isAll: false,
                         types: [PPEodType.POS, PPEodType.MULTINET],
+                        clientToken: _clientToken,
+                        serialNo: _serialNo,
                       ),
                     ),
                   ),
@@ -216,6 +237,8 @@ class _HomePageState extends State<HomePage> {
                           PPParameterTypes.bank,
                           PPParameterTypes.multinet,
                         ],
+                        clientToken: _clientToken,
+                        serialNo: _serialNo,
                       ),
                     ),
                   ),

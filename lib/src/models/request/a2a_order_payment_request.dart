@@ -14,10 +14,14 @@ sealed class PPOrderPaymentRequestModel with _$PPOrderPaymentRequestModel {
       _$PPOrderPaymentRequestModelFromJson(json);
 
   factory PPOrderPaymentRequestModel.toRequest({
+    required String serialNo,
+    required String clientToken,
     required String orderCode,
   }) => PPOrderPaymentRequestModel(
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.ORDER_PAYMENT,
+      serialNo: serialNo,
+      clientToken: clientToken,
       orderCode: orderCode,
     ),
   );

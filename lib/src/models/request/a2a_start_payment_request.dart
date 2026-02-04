@@ -17,6 +17,8 @@ sealed class PPStartPaymentRequestModel with _$PPStartPaymentRequestModel {
       _$PPStartPaymentRequestModelFromJson(json);
 
   factory PPStartPaymentRequestModel.toRequest({
+    required String serialNo,
+    required String clientToken,
     required String orderCode,
     required PPPaymentType paymentType,
     required PPPaymentMethod paymentMethod,
@@ -39,6 +41,8 @@ sealed class PPStartPaymentRequestModel with _$PPStartPaymentRequestModel {
     ),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_PAYMENT_START,
+      serialNo: serialNo,
+      clientToken: clientToken,
       orderCode: orderCode,
     ),
   );

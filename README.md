@@ -37,6 +37,8 @@ await pluspay.initialize();
 try {
   final result = await pluspay.startPayment(
     PPStartPaymentRequestModel.toRequest(
+      serialNo: 'DEVICE-SERIAL-001',
+      clientToken: 'YOUR-CLIENT-TOKEN',
       orderCode: 'ORD-001',
       totalAmount: 150.0,
       paymentType: PPPaymentType.POS,
@@ -74,6 +76,8 @@ Her istek modeli, düz ve kullanışlı bir API sunan **`toRequest`** factory co
 
 ```dart
 PPStartPaymentRequestModel.toRequest(
+  serialNo: 'DEVICE-SERIAL-001',
+  clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
   totalAmount: 100.0,
   paymentType: PPPaymentType.POS,
@@ -90,6 +94,8 @@ PPStartPaymentRequestModel.toRequest(
 
 ```dart
 PPCancelPaymentRequestModel.toRequest(
+  serialNo: 'DEVICE-SERIAL-001',
+  clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
   transactionId: 'TX-123',
   note: 'Müşteri iptali talep etti', // opsiyonel
@@ -100,6 +106,8 @@ PPCancelPaymentRequestModel.toRequest(
 
 ```dart
 PPEftPaymentRequestModel.toRequest(
+  serialNo: 'DEVICE-SERIAL-001',
+  clientToken: 'YOUR-CLIENT-TOKEN',
   totalAmount: 250.0,
   paymentType: PPPaymentType.POS,
   paymentMethod: PPPaymentMethod.CC,
@@ -113,6 +121,8 @@ PPEftPaymentRequestModel.toRequest(
 
 ```dart
 PPEftCancelRequestModel.toRequest(
+  serialNo: 'DEVICE-SERIAL-001',
+  clientToken: 'YOUR-CLIENT-TOKEN',
   transactionId: 'EFT-001',
   totalAmount: 250.0,
 );
@@ -122,6 +132,8 @@ PPEftCancelRequestModel.toRequest(
 
 ```dart
 PPOrderPaymentRequestModel.toRequest(
+  serialNo: 'DEVICE-SERIAL-001',
+  clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
 );
 ```
@@ -130,17 +142,21 @@ PPOrderPaymentRequestModel.toRequest(
 
 ```dart
 PPEodRequestModel.toRequest(
+  serialNo: 'DEVICE-SERIAL-001',
+  clientToken: 'YOUR-CLIENT-TOKEN',
   isAll: false,
   types: [PPEodType.POS, PPEodType.MULTINET],
 );
 ```
 
-### Parametre Güncelleme
+### Parametre Yükleme
 
 ```dart
 PPParameterRequestModel.toRequest(
+  serialNo: 'DEVICE-SERIAL-001',
+  clientToken: 'YOUR-CLIENT-TOKEN',
   isAll: true,
-  types: [PPParameterTypes.bank, PPParameterTypes.multinet],
+  types: null,
 );
 ```
 

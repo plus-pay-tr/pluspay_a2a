@@ -13,6 +13,8 @@ _PPGeneralRequestHeader _$PPGeneralRequestHeaderFromJson(
     _$PPTransactionTypeEnumMap,
     json['transaction_type'],
   ),
+  serialNo: json['serial_no'] as String,
+  clientToken: json['client_token'] as String,
   orderCode: json['order_code'] as String?,
   transactionId: json['transaction_id'] as String?,
 );
@@ -21,6 +23,8 @@ Map<String, dynamic> _$PPGeneralRequestHeaderToJson(
   _PPGeneralRequestHeader instance,
 ) => <String, dynamic>{
   'transaction_type': _$PPTransactionTypeEnumMap[instance.transactionType]!,
+  'serial_no': instance.serialNo,
+  'client_token': instance.clientToken,
   'order_code': instance.orderCode,
   'transaction_id': instance.transactionId,
 };
