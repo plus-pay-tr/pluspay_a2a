@@ -7,6 +7,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:pluspay_a2a/pluspay_a2a.dart';
 
+import 'models/index.dart';
+
 /// Main client for Pluspay POS+ App2App (A2A) integration.
 ///
 /// Usage:

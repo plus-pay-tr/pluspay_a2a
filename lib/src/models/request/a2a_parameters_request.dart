@@ -15,7 +15,7 @@ sealed class PPParameterRequestModel with _$PPParameterRequestModel {
       _$PPParameterRequestModelFromJson(json);
 
   factory PPParameterRequestModel.toRequest({
-    required String serialNo,
+    
     required String clientToken,
     List<PPParameterTypes> types = const [],
     bool isAll = false,
@@ -23,7 +23,6 @@ sealed class PPParameterRequestModel with _$PPParameterRequestModel {
     data: PPParameterRequestData(types: types, isAll: isAll),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.PARAMETERS,
-      serialNo: serialNo,
       clientToken: clientToken,
     ),
   );

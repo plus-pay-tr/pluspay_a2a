@@ -32,7 +32,6 @@ class _HomePageState extends State<HomePage> {
   bool _loading = false;
 
   final String _clientToken = 'YOUR_CLIENT_TOKEN';
-  final String _serialNo = 'YOUR_SERIAL_NO';
 
   @override
   void initState() {
@@ -67,7 +66,6 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-
   Future<void> startPayment() async {
     await _execute(
       () => _pluspay.startPayment(
@@ -77,7 +75,6 @@ class _HomePageState extends State<HomePage> {
           paymentType: PPPaymentType.POS,
           paymentMethod: PPPaymentMethod.CC,
           clientToken: _clientToken,
-          serialNo: _serialNo,
         ),
       ),
     );
@@ -91,7 +88,6 @@ class _HomePageState extends State<HomePage> {
           transactionId: 'TX001',
           note: 'Test iptali',
           clientToken: _clientToken,
-          serialNo: _serialNo,
         ),
       ),
     );
@@ -107,7 +103,6 @@ class _HomePageState extends State<HomePage> {
           transactionId: Uuid().v4(),
           taxRate: 0,
           clientToken: _clientToken,
-          serialNo: _serialNo,
         ),
       ),
     );
@@ -120,7 +115,6 @@ class _HomePageState extends State<HomePage> {
           transactionId: Uuid().v4(),
           totalAmount: 3.0,
           clientToken: _clientToken,
-          serialNo: _serialNo,
         ),
       ),
     );
@@ -132,13 +126,10 @@ class _HomePageState extends State<HomePage> {
         PPOrderPaymentRequestModel.toRequest(
           orderCode: 'ORD001',
           clientToken: _clientToken,
-          serialNo: _serialNo,
         ),
       ),
     );
   }
-
-
 
   void _showResultDialog({required bool success, required String message}) {
     showDialog(
@@ -205,7 +196,6 @@ class _HomePageState extends State<HomePage> {
                       PPOrderPaymentRequestModel.toRequest(
                         orderCode: 'ORD001',
                         clientToken: _clientToken,
-                        serialNo: _serialNo,
                       ),
                     ),
                   ),
@@ -221,7 +211,6 @@ class _HomePageState extends State<HomePage> {
                         isAll: false,
                         types: [PPEodType.POS, PPEodType.MULTINET],
                         clientToken: _clientToken,
-                        serialNo: _serialNo,
                       ),
                     ),
                   ),
@@ -238,7 +227,6 @@ class _HomePageState extends State<HomePage> {
                           PPParameterTypes.multinet,
                         ],
                         clientToken: _clientToken,
-                        serialNo: _serialNo,
                       ),
                     ),
                   ),

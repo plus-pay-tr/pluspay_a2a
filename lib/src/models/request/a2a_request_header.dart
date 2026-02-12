@@ -8,7 +8,6 @@ part 'a2a_request_header.g.dart';
 sealed class PPGeneralRequestHeader with _$PPGeneralRequestHeader {
   const factory PPGeneralRequestHeader({
     required PPTransactionType transactionType,
-    required String serialNo,
     required String clientToken,
     String? orderCode,
     String? transactionId,

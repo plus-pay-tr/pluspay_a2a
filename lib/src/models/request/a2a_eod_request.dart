@@ -15,7 +15,7 @@ sealed class PPEodRequestModel with _$PPEodRequestModel {
       _$PPEodRequestModelFromJson(json);
 
   factory PPEodRequestModel.toRequest({
-    required String serialNo,
+    
     required String clientToken,
     List<PPEodType> types = const [],
     bool isAll = false,
@@ -23,7 +23,6 @@ sealed class PPEodRequestModel with _$PPEodRequestModel {
     data: PPEodRequestData(types: types, isAll: isAll),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.EOD,
-      serialNo: serialNo,
       clientToken: clientToken,
     ),
   );

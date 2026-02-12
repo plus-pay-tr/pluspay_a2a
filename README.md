@@ -15,8 +15,10 @@ dependencies:
   pluspay_a2a:
     git:
       url: https://github.com/plus-pay-tr/pluspay_a2a.git
-      ref: main 
+      ref: 0.2.0  # pubspec.yaml'deki versiyon ile eşleşen tag
 ```
+
+> **Not:** `ref` değeri olarak her zaman kullanmak istediğiniz versiyonun tag'ini belirtin (örn. `0.1.0`, `0.2.0`). Mevcut versiyonları görmek için [tags](https://github.com/plus-pay-tr/pluspay_a2a/tags) sayfasını ziyaret edin.
 
 Ardından çalıştırın:
 
@@ -37,7 +39,6 @@ await pluspay.initialize();
 try {
   final result = await pluspay.startPayment(
     PPStartPaymentRequestModel.toRequest(
-      serialNo: 'DEVICE-SERIAL-001',
       clientToken: 'YOUR-CLIENT-TOKEN',
       orderCode: 'ORD-001',
       totalAmount: 150.0,
@@ -76,7 +77,6 @@ Her istek modeli, düz ve kullanışlı bir API sunan **`toRequest`** factory co
 
 ```dart
 PPStartPaymentRequestModel.toRequest(
-  serialNo: 'DEVICE-SERIAL-001',
   clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
   totalAmount: 100.0,
@@ -94,7 +94,6 @@ PPStartPaymentRequestModel.toRequest(
 
 ```dart
 PPCancelPaymentRequestModel.toRequest(
-  serialNo: 'DEVICE-SERIAL-001',
   clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
   transactionId: 'TX-123',
@@ -106,7 +105,6 @@ PPCancelPaymentRequestModel.toRequest(
 
 ```dart
 PPEftPaymentRequestModel.toRequest(
-  serialNo: 'DEVICE-SERIAL-001',
   clientToken: 'YOUR-CLIENT-TOKEN',
   totalAmount: 250.0,
   paymentType: PPPaymentType.POS,
@@ -121,7 +119,6 @@ PPEftPaymentRequestModel.toRequest(
 
 ```dart
 PPEftCancelRequestModel.toRequest(
-  serialNo: 'DEVICE-SERIAL-001',
   clientToken: 'YOUR-CLIENT-TOKEN',
   transactionId: 'EFT-001',
   totalAmount: 250.0,
@@ -132,7 +129,6 @@ PPEftCancelRequestModel.toRequest(
 
 ```dart
 PPOrderPaymentRequestModel.toRequest(
-  serialNo: 'DEVICE-SERIAL-001',
   clientToken: 'YOUR-CLIENT-TOKEN',
   orderCode: 'ORD-001',
 );
@@ -142,7 +138,6 @@ PPOrderPaymentRequestModel.toRequest(
 
 ```dart
 PPEodRequestModel.toRequest(
-  serialNo: 'DEVICE-SERIAL-001',
   clientToken: 'YOUR-CLIENT-TOKEN',
   isAll: false,
   types: [PPEodType.POS, PPEodType.MULTINET],
@@ -153,7 +148,6 @@ PPEodRequestModel.toRequest(
 
 ```dart
 PPParameterRequestModel.toRequest(
-  serialNo: 'DEVICE-SERIAL-001',
   clientToken: 'YOUR-CLIENT-TOKEN',
   isAll: true,
   types: null,

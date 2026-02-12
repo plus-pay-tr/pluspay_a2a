@@ -15,7 +15,7 @@ sealed class PPEftPaymentRequestModel with _$PPEftPaymentRequestModel {
       _$PPEftPaymentRequestModelFromJson(json);
 
   factory PPEftPaymentRequestModel.toRequest({
-    required String serialNo,
+    
     required String clientToken,
     required double totalAmount,
     required PPPaymentType paymentType,
@@ -34,7 +34,6 @@ sealed class PPEftPaymentRequestModel with _$PPEftPaymentRequestModel {
     ),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_EFTPOS,
-      serialNo: serialNo,
       clientToken: clientToken,
     ),
   );

@@ -16,7 +16,7 @@ sealed class PPEftCancelRequestModel with _$PPEftCancelRequestModel {
       _$PPEftCancelRequestModelFromJson(json);
 
   factory PPEftCancelRequestModel.toRequest({
-    required String serialNo,
+    
     required String clientToken,
     required String transactionId,
     required double totalAmount,
@@ -24,7 +24,6 @@ sealed class PPEftCancelRequestModel with _$PPEftCancelRequestModel {
     data: PPEftCancelRequestData(totalAmount: totalAmount),
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_EFTPOS_CANCEL,
-      serialNo: serialNo,
       clientToken: clientToken,
       transactionId: transactionId,
     ),
