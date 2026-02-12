@@ -15,10 +15,10 @@ dependencies:
   pluspay_a2a:
     git:
       url: https://github.com/plus-pay-tr/pluspay_a2a.git
-      ref: 0.2.0  # pubspec.yaml'deki versiyon ile eşleşen tag
+      ref: 0.2.1 
 ```
 
-> **Not:** `ref` değeri olarak her zaman kullanmak istediğiniz versiyonun tag'ini belirtin (örn. `0.1.0`, `0.2.0`). Mevcut versiyonları görmek için [tags](https://github.com/plus-pay-tr/pluspay_a2a/tags) sayfasını ziyaret edin.
+> **Not:** `ref` değeri olarak her zaman kullanmak istediğiniz versiyonun tag'ini belirtin (örn. `0.1.0`, `0.2.0`). Mevcut versiyonları görmek için [tags](https://github.com/plus-pay-tr/pluspay_a2a/tags) sayfasını ziyaret edin. Her zaman son versiyonu kullanmanızı öneririz.
 
 Ardından çalıştırın:
 

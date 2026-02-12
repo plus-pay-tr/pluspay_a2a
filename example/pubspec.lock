@@ -221,9 +221,11 @@ packages:
   pluspay_a2a:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: "0.2.0"
+      resolved-ref: "02dfb2885beeb68f02ee594d524748ef8a7f88c3"
+      url: "https://github.com/plus-pay-tr/pluspay_a2a.git"
+    source: git
     version: "0.1.0"
   process:
     dependency: transitive
