@@ -112,3 +112,8 @@ enum PPDeliveryTypeEnum {
   TAKE_AWAY,
   TAKE_CLOSE
 }
+
+enum PPDeviceTypeEnum {
+  POS,
+  KIOSK,
+}

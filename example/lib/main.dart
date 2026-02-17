@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   final PPA2AClient _pluspay = PPA2AClient();
   bool _loading = false;
 
-  final String _clientToken = 'YOUR_CLIENT_TOKEN';
+  final String _clientToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVjNjE0ZDNhLTBmM2ItNGU1Ni04OTU1LTgyYzdhYmVkMWJmOSIsIm1lcmNoYW50X2lkIjoiMTIwLjAxLjMzNjIzNSIsImNvbXBhbnlfaWQiOiIwMDkwMjljMi00Nzg3LTQ4MjctOGMyZC00ZTNjZGU1ZTkzMGEiLCJmaXJtX2lkIjoiMzBjYmZkZDktNTBlNi00ODE5LWExM2EtNGFkMGY4NjI2ZmMyIiwiYXBpX3R5cGUiOiJCUkFOQ0giLCJleHBpcmVzIjoiMjAyNy0wMi0xNyAxMjozNiIsImlhdCI6MTc3MTMyMDk4OSwiZXhwIjoxODAyODU2OTg5fQ.-_kRSimgmMBF03GEnbYoDqMrAVXr8NPc4Uoi5r-DgpQ';
 
   @override
   void initState() {
@@ -102,6 +102,7 @@ class _HomePageState extends State<HomePage> {
           paymentMethod: PPPaymentMethod.CC,
           transactionId: Uuid().v4(),
           taxRate: 0,
+          deviceType: PPDeviceTypeEnum.POS,
           clientToken: _clientToken,
         ),
       ),

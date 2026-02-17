@@ -22,6 +22,7 @@ sealed class PPEftPaymentRequestModel with _$PPEftPaymentRequestModel {
     required PPPaymentMethod paymentMethod,
     required String transactionId,
     required int taxRate,
+    PPDeviceTypeEnum deviceType = PPDeviceTypeEnum.POS,
     int? installment,
   }) => PPEftPaymentRequestModel(
     data: PPEftPaymentRequestData(
@@ -35,6 +36,7 @@ sealed class PPEftPaymentRequestModel with _$PPEftPaymentRequestModel {
     header: PPGeneralRequestHeader(
       transactionType: PPTransactionType.POST_EFTPOS,
       clientToken: clientToken,
+      deviceType: deviceType
     ),
   );
 }
